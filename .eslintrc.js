@@ -9,9 +9,7 @@ module.exports = {
       env: {
         node: true
       },
-      files: [
-        '.eslintrc.{js,cjs}'
-      ],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script'
       }
@@ -22,5 +20,15 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    'no-func-assign': 'off',
+    'no-console': 'off',
+    'no-alert': 'off',
+    'no-underscore-dangle': 'off',
+    'no-empty': 'off',
+    'no-magic-numbers': 'off',
+    'no-extra-semi': 'off',
+    'no-restricted-globals': 'off',
+    'no-shadow': 'off',
+    camelcase: 'off'
   }
 }
