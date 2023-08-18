@@ -5,6 +5,9 @@ export const createCommunityCard = (data) => {
   const img = document.createElement('img')
   img.src = data.avatar
   img.alt = 'Profile Picture'
+  img.loading = 'lazy'
+  img.width = 100
+  img.height = 100
 
   const p = document.createElement('p')
   p.textContent =

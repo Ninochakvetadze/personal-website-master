@@ -1,4 +1,4 @@
-import validate from './email-validator'
+import { validate } from './email-validator.js'
 
 class SectionCreator {
   create (type) {

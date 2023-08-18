@@ -11,6 +11,9 @@ module.exports = {
     filename: 'bundle.js',
     clean: true
   },
+  performance: {
+    maxAssetSize: 944 * 1024
+  },
   module: {
     rules: [
       {
@@ -50,7 +53,29 @@ module.exports = {
     })
   ],
   devServer: {
-    hot: true
+    port: 8080,
+    open: true,
+    hot: true,
+    compress: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        secure: false
+      },
+      '/subscribe': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      },
+      '/community': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      },
+      '/unsubscribe': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      }
+    }
   },
   optimization: {
     minimize: true,
